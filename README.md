@@ -1,1 +1,8 @@
-this is a firs group repository\nGroup mempers:\nMostafa Naguib\nMohammed Farid\nSubject:\nCreate a printf function like a standard liybrary in c language
+This is a firs group repository
+
+Group mempers:
+1- Mostafa Naguib
+2- Mohammed Farid (El Hlawany)
+
+Subject:
+Create a printf function like a standard liybrary in c language
