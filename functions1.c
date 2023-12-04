@@ -44,8 +44,7 @@ int print_char(va_list args)
 {
 	char s = va_arg(args, int);
 
-	if (s)
-		_putchar(s);
+	_putchar(s);
 
 	return (1);
 }
