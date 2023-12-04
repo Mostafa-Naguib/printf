@@ -9,12 +9,12 @@ int _strlen(char *s);
  * Return: The length of the string
  */
 
-int printf_string(va_list val)
+int print_string(va_list args)
 {
 	char *s;
 	int i, len;
 
-	s = va_arg(val, char *);
+	s = va_arg(args, char *);
 	if (s == NULL)
 	{
 		s = "(null)";
@@ -76,4 +76,5 @@ int _strlen(char *s)
 
 	for (i = 0; s[i] != '\0'; i++)
 		;
+	return (i);
 }
