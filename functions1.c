@@ -69,6 +69,11 @@ int print_integer(va_list args)
 	return (0);
 }
 
+/**
+ * printf_string - print a string.
+ * @val: argumen t.
+ * Return: the length of the string.
+ */
 
 int _strlen(char *s)
 {

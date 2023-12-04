@@ -9,14 +9,11 @@
 int _printf(const char *format, ...)
 {
 	va_list args;
-	int i = 0, x = 0;
-	int is_present = 0;
+	int i = 0, len = 0, j = 2;
 
 	va_start(args, format);
 
 	if (!format || (format[0] == '%' && !format[1]))
-		return (-1);
-	if (format[0] == '%' && format[1] == ' ' && !format[2])
 		return (-1);
 
 	while (format[i])
@@ -25,32 +22,25 @@ int _printf(const char *format, ...)
 		{
 			case 1:
 				is_present = 0;
-				switch (format[i])
+				while (j--)
 				{
-					case 's':
-						x += print_string(args);
-						break;
-					case 'c':
-						x += print_char(args);
-						break;
-					case '%':
-						x += _putchar('%');
-						break;
-					default:
-						_putchar('%');
-						_putchar(format[i]);
-						break;
+					if (format[i] == formats[j].s[1])
+					{
+						len += formats[j].v(args);
+						i++;
+					}
 				}
-				break;
+
 			case 0:
 				if (format[i] == '%')
 					is_present = 1;
 				else
 					_putchar(format[i]);
+					len++;
 				break;
 		}
 		i++;
 	}
 	va_end(args);
-	return (i + x);
+	return (i);
 }
