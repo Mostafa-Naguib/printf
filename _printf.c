@@ -9,7 +9,13 @@
 int _printf(const char *format, ...)
 {
 	va_list args;
+	int is_present;
 	int i = 0, len = 0, j = 2;
+
+	specifier formats[] = {
+		{"%s", print_string},
+		{"%c", print_char},
+	};
 
 	va_start(args, format);
 
@@ -30,14 +36,17 @@ int _printf(const char *format, ...)
 						i++;
 					}
 				}
-
+				break;
 			case 0:
 				if (format[i] == '%')
 					is_present = 1;
 				else
+				{
 					_putchar(format[i]);
 					len++;
+				}
 				break;
+
 		}
 		i++;
 	}

@@ -31,16 +31,12 @@ int print_integer(va_list args);
  *
  */
 
-typedef struct format
+typedef struct form
 {
 	char *s;
 	int (*v)(va_list args);
-} format;
+} specifier;
 
-format formats[] = {
-	{"%s", print_string},
-	{"%c", print_char},
-};
 
 #endif
 
