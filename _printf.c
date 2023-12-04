@@ -42,9 +42,6 @@ int _printf(const char *format, ...)
 					case 'd':
 						print_integer(args);
 						break;
-					case 'i':
-						print_integer(args);
-						break;
 					default:
 						_putchar('%');
 						_putchar(format[i]);
