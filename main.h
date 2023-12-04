@@ -21,9 +21,9 @@ int _putchar(int c);
 
 
 
-void print_string(va_list args);
-void print_char(va_list args);
-void print_integer(va_list args);
+int print_string(va_list args);
+int print_char(va_list args);
+int print_integer(va_list args);
 
 #endif
 

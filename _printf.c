@@ -9,19 +9,16 @@
 int _printf(const char *format, ...)
 {
 	va_list args;
-	int i = 0, y;
+	int i = 0, x = 0;
 	int is_present = 0;
 
 	va_start(args, format);
-	
+
 	if (!format || (format[0] == '%' && !format[1]))
-	{
 		return (-1);
-	}
 	if (format[0] == '%' && format[1] == ' ' && !format[2])
-	{
 		return (-1);
-	}		
+
 	while (format[i])
 	{
 		switch (is_present)
@@ -31,16 +28,13 @@ int _printf(const char *format, ...)
 				switch (format[i])
 				{
 					case 's':
-						print_string(args);
+						x += print_string(args);
 						break;
 					case 'c':
-						print_char(args);
+						x += print_char(args);
 						break;
 					case '%':
-						_putchar('%');
-						break;
-					case 'd':
-						print_integer(args);
+						x += _putchar('%');
 						break;
 					default:
 						_putchar('%');
@@ -50,18 +44,13 @@ int _printf(const char *format, ...)
 				break;
 			case 0:
 				if (format[i] == '%')
-				{
 					is_present = 1;
-				}
 				else
-				{
 					_putchar(format[i]);
-				}
 				break;
 		}
 		i++;
 	}
-	y = _putchar(BUFFER_FLUSH);
 	va_end(args);
-	return (i + y);
+	return (i + x);
 }
