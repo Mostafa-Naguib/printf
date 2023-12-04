@@ -6,50 +6,35 @@
  * Return: the number of characters printed (excluding the null byte)
  */
 
-int _printf(const char *format, ...)
+int _printf(const char * const format, ...)
 {
-	va_list args;
-	int is_present;
-	int i = 0, len = 0, j = 2;
-
 	specifier formats[] = {
 		{"%s", print_string},
 		{"%c", print_char},
 	};
+	va_list args;
+	int i = 0, j, len = 0;
 
 	va_start(args, format);
-
-	if (!format || (format[0] == '%' && !format[1]))
+	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
 		return (-1);
 
-	while (format[i])
+	while (format[i] != '\0')
 	{
-		switch (is_present)
+		j = 1;
+		while (j >= 0)
 		{
-			case 1:
-				is_present = 0;
-				while (j--)
-				{
-					if (format[i] == formats[j].s[1])
-					{
-						len += formats[j].v(args);
-						i++;
-					}
-				}
-				break;
-			case 0:
-				if (format[i] == '%')
-					is_present = 1;
-				else
-				{
-					_putchar(format[i]);
-					len++;
-				}
-				break;
-
+			if (formats[j].s[0] == format[i] && formats[j].s[1] == format[i + 1])
+			{
+				len += formats[j].v(args);
+				i = i + 2;
+			}
+			j--;
 		}
+		_putchar(format[i]);
+		len++;
 		i++;
 	}
 	va_end(args);
-	return (i);
+	return (len);
 }
