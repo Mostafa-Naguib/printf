@@ -12,6 +12,7 @@
 /* size of the output buffer */
 #define BUFFER_SIZE 1024
 #define BUFFER_FLUSH -1
+#define NULL_STRING "(null)"
 
 
 /* prototype functions */
@@ -22,6 +23,7 @@ int _putchar(int c);
 
 void print_string(va_list args);
 void print_char(va_list args);
+void print_integer(va_list args);
 
 #endif
 

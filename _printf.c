@@ -13,7 +13,15 @@ int _printf(const char *format, ...)
 	int is_present = 0;
 
 	va_start(args, format);
-
+	
+	if (!format || (format[0] == '%' && !format[1]))
+	{
+		return (-1);
+	}
+	if (format[0] == '%' && format[1] == ' ' && !format[2])
+	{
+		return (-1);
+	}		
 	while (format[i])
 	{
 		switch (is_present)
@@ -27,6 +35,15 @@ int _printf(const char *format, ...)
 						break;
 					case 'c':
 						print_char(args);
+						break;
+					case '%':
+						_putchar('%');
+						break;
+					case 'd':
+						print_integer(args);
+						break;
+					case 'i':
+						print_integer(args);
 						break;
 					default:
 						_putchar('%');
