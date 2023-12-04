@@ -10,16 +10,16 @@
 
 int _putchar(int c)
 {
-	static int i;
+	static int x;
 	static char buffer[BUFFER_SIZE];
 
-	if (c == BUFFER_FLUSH || i >= BUFFER_SIZE)
+	if (c == BUFFER_FLUSH || x >= BUFFER_SIZE)
 	{
-		write(1, buffer, i);
-		i = 0;
+		write(1, buffer, x);
+		x = 0;
 	}
 	if (c != BUFFER_FLUSH)
-		buffer[i++] = c;
+		buffer[x++] = c;
 
 	return (1);
 }

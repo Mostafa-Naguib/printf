@@ -36,12 +36,15 @@ int _printf(const char *format, ...)
 				break;
 			case 0:
 				if (format[i] == '%')
+				{
 					is_present = 1;
+				}
+				else
+				{
+					_putchar(format[i]);
+				}
 				break;
 		}
-		if (is_present == 0 && format[i] != '%')
-			_putchar(format[i]);
-
 		i++;
 	}
 	_putchar(BUFFER_FLUSH);

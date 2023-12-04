@@ -12,7 +12,7 @@ void print_string(va_list args)
 	char *s = va_arg(args, char *);
 	char *a = s;
 
-	while (a)
+	while (*a != '\0')
 	{
 		_putchar(*a++);
 	}
