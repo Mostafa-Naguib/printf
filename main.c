@@ -5,7 +5,8 @@
 /**
  * main - Entry point
  *
- * Return: on success 0
+ * ldkfjs
+ * Return: n success 0
  */
 int main(void)
 {
