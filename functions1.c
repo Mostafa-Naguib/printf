@@ -1,4 +1,5 @@
 #include "main.h"
+int _strlen(char *s);
 
 /**
  * print_string - printing the the string
@@ -8,25 +9,28 @@
  * Return: The length of the string
  */
 
-int print_string(va_list args)
+int printf_string(va_list val)
 {
-	char *s = va_arg(args, char *);
-	char *a = s;
-	int i = 0;
+	char *s;
+	int i, len;
 
-	if (!s)
-		s = NULL_STRING;
-
-
-	while (*a != '\0')
+	s = va_arg(val, char *);
+	if (s == NULL)
 	{
-		_putchar(*a++);
-		i++;
+		s = "(null)";
+		len = _strlen(s);
+		for (i = 0; i < len; i++)
+			_putchar(s[i]);
+		return (len);
 	}
-
-	return (i);
+	else
+	{
+		len = _strlen(s);
+		for (i = 0; i < len; i++)
+			_putchar(s[i]);
+		return (len);
+	}
 }
-
 
 /**
  * print_char - printing the the string
@@ -63,4 +67,13 @@ int print_integer(va_list args)
 		_putchar(n);
 
 	return (0);
+}
+
+
+int _strlen(char *s)
+{
+	int i;
+
+	for (i = 0; s[i] != '\0'; i++)
+		;
 }
