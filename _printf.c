@@ -9,7 +9,7 @@
 int _printf(const char *format, ...)
 {
 	va_list args;
-	int i = 0;
+	int i = 0, y;
 	int is_present = 0;
 
 	va_start(args, format);
@@ -61,7 +61,7 @@ int _printf(const char *format, ...)
 		}
 		i++;
 	}
-	_putchar(BUFFER_FLUSH);
+	y = _putchar(BUFFER_FLUSH);
 	va_end(args);
-	return (i);
+	return (i + y);
 }

@@ -21,5 +21,5 @@ int _putchar(int c)
 	if (c != BUFFER_FLUSH)
 		buffer[x++] = c;
 
-	return (1);
+	return (x);
 }
