@@ -11,7 +11,7 @@
 int print_int(va_list args)
 {
 	int n = va_arg(args, int);
-	int num, digit, divisor = 1;
+	int num, digit, divisor = 0;
 	int  i = 1;
 
 	if (n < 0)
@@ -37,7 +37,6 @@ int print_int(va_list args)
 			i++;
 		}
 	}
-	_putchar(last + '0');
 
 	return (i);
 }
