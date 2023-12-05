@@ -8,6 +8,7 @@
  * Return: the number of characters printed (excluding the null byte).
  */
 
+
 int _printf(const char * const format, ...)
 {
 	specifier formats[] = {
@@ -16,32 +17,44 @@ int _printf(const char * const format, ...)
 		{"%%", print_percent}
 	};
 	va_list args;
-	int i = 0, j, len = 0;
+	int i = 0, is_percent = 0, j, len = 0;
 
 	va_start(args, format);
 
 	if (!format || (format[0] == '%' && !format[1]))
 		return (-1);
 
-
-	while (format[i])
-	{
-		j = 2;
-		while (j >= 0)
+	while (format[i]) {
+        switch (is_percent)
 		{
-			if (formats[j].s[0] == format[i] && formats[j].s[1] == format[i + 1])
-			{
-				len += formats[j].v(args);
-				i = i + 2;
-				j = 0;
-			}
-			j--;
+			case 1:
+				j = 2;
+				while (is_percent && j >= 0)
+				{
+					if (formats[j].s[1] == format[i])
+					{
+						len += formats[j].v(args);
+						is_percent = 0;
+					}
+					j--;
+				}
+				if (is_percent)
+				{
+					_putchar('%');
+					_putchar(format[i]);
+					is_percent = 0;
+					len++;
+				}
+				break;
+			case 0:
+                if (format[i] == '%')
+                    is_percent = 1;
+				else
+                    _putchar(format[i]);
+					len++;
+                break;
 		}
-		if (format[i])
-		{
-			_putchar(format[i++]);
-			len++;
-		}
+		i++;
 	}
 	va_end(args);
 	return (len);
