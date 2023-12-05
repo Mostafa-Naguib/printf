@@ -24,8 +24,7 @@ int _printf(const char * const format, ...)
 	Here:
 	while (format[i] != '\0')
 	{
-		j = 2;
-		while (j >= 0)
+		for (j = 0; j <= 0; j++)
 		{
 			if (formats[j].s[0] == format[i] && formats[j].s[1] == format[i + 1])
 			{
@@ -33,7 +32,6 @@ int _printf(const char * const format, ...)
 				i = i + 2;
 				goto Here;
 			}
-			j--;
 		}
 		_putchar(format[i]);
 		len++;
@@ -41,4 +39,17 @@ int _printf(const char * const format, ...)
 	}
 	va_end(args);
 	return (len);
+}
+
+/**
+ * _putchar - writes the character c to stdout
+ * @c: The character to print
+ *
+ * Return: On success 1.
+ * On error, -1 is returned, and errno is set appropriately.
+ */
+
+int _putchar(char c)
+{
+	return (write(1, &c, 1));
 }
