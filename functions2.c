@@ -12,7 +12,7 @@ int print_int(va_list args)
 {
 	int num = va_arg(args, int);
 	int divisor, digit;
-	int counter = 1;
+	int counter = 0;
 
 	if (num < 0)
 	{
