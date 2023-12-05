@@ -9,12 +9,12 @@ int _strlen(char *s);
  * Return: The length of the string
  */
 
-int print_string(va_list args)
+int print_string(va_list val)
 {
 	char *s;
 	int i, len;
 
-	s = va_arg(args, char *);
+	s = va_arg(val, char *);
 	if (s == NULL)
 	{
 		s = "(null)";
@@ -40,12 +40,12 @@ int print_string(va_list args)
  * Return: one
  */
 
-int print_char(va_list args)
+int print_char(va_list val)
 {
-	int s = va_arg(args, int);
+	char s;
 
+	s = va_arg(val, int);
 	_putchar(s);
-
 	return (1);
 }
 
@@ -57,12 +57,8 @@ int print_char(va_list args)
  * Return: one
  */
 
-int print_percent(va_list args)
+int print_percent(void)
 {
-	int s = va_arg(args, int);
-
-	s = s;
-
 	_putchar(37);
 
 	return (1);
@@ -95,9 +91,10 @@ int print_integer(va_list args)
 
 int _strlen(char *s)
 {
-	int i;
+	int c;
 
-	for (i = 0; s[i] != '\0'; i++)
+	for (c = 0; s[c] != 0; c++)
 		;
-	return (i);
+	return (c);
+
 }

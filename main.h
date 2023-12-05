@@ -17,13 +17,13 @@
 
 /* prototype functions */
 int _printf(const char *format, ...);
-int _putchar(int c);
+int _putchar(char c);
 
 
 int print_string(va_list args);
 int print_char(va_list args);
 int print_integer(va_list args);
-int print_percent(va_list args);
+int print_percent(void);
 
 /**
  * struct form - match the conversion specifiers for printf
@@ -35,7 +35,7 @@ int print_percent(va_list args);
 typedef struct form
 {
 	char *s;
-	int (*v)(va_list args);
+	int (*v)();
 } specifier;
 
 
