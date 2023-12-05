@@ -42,7 +42,7 @@ int print_string(va_list args)
 
 int print_char(va_list args)
 {
-	char s = va_arg(args, int);
+	int s = va_arg(args, int);
 
 	_putchar(s);
 
