@@ -15,13 +15,12 @@ int print_str(va_list val)
 	int i, len;
 
 	s = va_arg(val, char *);
-	if (s == NULL)
+	if (!s)
 	{
 		s = "(null)";
-		len = _strlen(s);
-		for (i = 0; i < len; i++)
+		for (i = 0; i < 6; i++)
 			_putchar(s[i]);
-		return (len);
+		return (6);
 	}
 	else
 	{
@@ -40,9 +39,9 @@ int print_str(va_list val)
  * Return: one
  */
 
-int print_char(va_list val)
+int print_char(va_list args)
 {
-	_putchar(va_arg(val, int));
+	_putchar(va_arg(args, int));
 
 	return (1);
 }
@@ -62,24 +61,6 @@ int print_percent(void)
 	return (1);
 }
 
-
-/**
- * print_integer - printing the the string..
- *
- * @args: the char argument..
- *
- * Return: The number of the digits
- */
-
-int print_integer(va_list args)
-{
-	int n = va_arg(args, int);
-
-	if (n)
-		_putchar(n);
-
-	return (0);
-}
 
 /**
  * _strlen - Get the length of the string
