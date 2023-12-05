@@ -13,7 +13,7 @@ int _printf(const char * const format, ...)
 	specifier formats[] = {
 		{"%s", print_str},
 		{"%c", print_char},
-		{"%d", print_int},
+		{"%d", print_dec},
 		{"%i", print_int},
 		{"%%", print_percent}
 	};

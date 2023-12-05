@@ -23,7 +23,7 @@ int print_percent(void);
 
 /* prototype for functoins2 file */
 int print_int(va_list args);
-
+int print_dec(va_list args);
 
 
 /**
