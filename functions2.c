@@ -23,20 +23,23 @@ int print_int(va_list args)
 		counter++;
 	}
 
-	divisor = 1;
-	while (num / divisor != 0)
-		divisor *= 10;
+    if (num > 0)
+    {
+        divisor = 10;
+        while (num / divisor != 0)
+            divisor *= 10;
 
 
-	while (divisor > 0)
-	{
-		digit = num / divisor;
-		_putchar(digit + '0');
-		num %= divisor;
-		divisor /= 10;
-		counter++;
-	}
-	_putchar(last + '0');
+        while (divisor > 0)
+        {
+            digit = num / divisor;
+            _putchar(digit + '0');
+            num %= divisor;
+            divisor /= 10;
+            counter++;
+        }
+    }
+    _putchar(last + '0');
 
 	return (counter);
 }
