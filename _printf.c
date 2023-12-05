@@ -27,7 +27,7 @@ int _printf(const char * const format, ...)
 	{
 		for (j = 0; j < 3; j++)
 		{
-			if (formats[j].s[1] == format[i + 1])
+			if (format[i] == '%' && formats[j].s[1] == format[i + 1])
 			{
 				len += formats[j].v(args);
 				i += 2;
