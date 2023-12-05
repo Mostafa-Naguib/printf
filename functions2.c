@@ -10,28 +10,36 @@
 
 int print_int(va_list args)
 {
-	int num = va_arg(args, int);
-	int divisor, digit;
-	int counter = 0;
+	int n = va_arg(args, int);
+	int num, last = n % 10, digit, devisor = 1;
+	int  i = 1;
 
-	if (num < 0)
+	n = n / 10;
+	num = n;
+
+	if (last < 0)
 	{
 		_putchar('-');
-		num *= -1;
-		counter++;
+		num = -num;
+		n = -n;
+		last = -last;
+		i++;
 	}
+    while (num / 10 != 0)
+    {
+        devisor = devisor * 10;
+        num = num / 10;
+    }
+    num = n;
+    while (devisor > 0)
+    {
+        digit = num / devisor;
+        _putchar(digit + '0');
+        num = num - (digit * devisor);
+        devisor = devisor / 10;
+        i++;
+    }
+	_putchar(last + '0');
 
-	divisor = 1;
-	while (num / divisor > 9)
-		divisor *= 10;
-
-	while (divisor > 0)
-	{
-		digit = num / divisor;
-		_putchar(digit + '0');
-		num %= divisor;
-		divisor /= 10;
-		counter++;
-	}
-	return (counter);
+	return (i);
 }
