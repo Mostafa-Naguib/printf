@@ -14,13 +14,13 @@ int print_int(va_list args)
 	int divisor, digit, last = num % 10;
 	int counter = 1;
 
-    num /= 10;
+    num = num / 10;
 
 	if (last < 0)
 	{
 		_putchar('-');
-		num *= -1;
-		last *= -1;
+		num = -num;
+		last = -last;
 		counter++;
 	}
 
