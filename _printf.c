@@ -37,9 +37,11 @@ int _printf(const char * const format, ...)
 			}
 			j--;
 		}
-		_putchar(format[i]);
-		len++;
-		i++;
+		if (format[i])
+		{
+			_putchar(format[i++]);
+			len++;
+		}
 	}
 	va_end(args);
 	return (len);
