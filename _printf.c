@@ -16,7 +16,7 @@ int _printf(const char * const format, ...)
 		{"%%", print_percent}
 	};
 	va_list args;
-	int i = 0, j, len = 0;
+	int i = 0, j = 0, len = 0;
 
 	va_start(args, format);
 
@@ -31,7 +31,7 @@ int _printf(const char * const format, ...)
 			{
 				len += formats[j].v(args);
 				i += 2;
-				j = 100;
+				j = 99;
 			}
 		}
 		if (format[i] && j != 100)
