@@ -31,7 +31,7 @@ int print_int(va_list args)
 		while (num / divisor > 9)
 			divisor *= 10;
 
-		while (divisor != 0 && num > 0)
+		while (divisor != 0)
 		{
 			digit = num / divisor;
 			_putchar(digit + '0');
