@@ -33,7 +33,7 @@ int _printf(const char * const format, ...)
 			{
 				len += formats[j].v(args);
 				i = i + 2;
-				goto Here;
+				j = -23;
 			}
 			j--;
 		}
