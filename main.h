@@ -25,7 +25,7 @@ int print_char(va_list args);
 int print_integer(va_list args);
 
 /**
- * struct format - match the conversion specifiers for printf
+ * struct form - match the conversion specifiers for printf
  * @s: type char pointer of the specifier i.e (l, h) for (d, i, u, o, x, X)
  * @v: type pointer to function for the conversion specifier
  *
