@@ -2,14 +2,14 @@
 int _strlen(char *s);
 
 /**
- * print_string - printing the the string
+ * print_str - printing the the string
  *
  * @args: the string argument
  *
  * Return: The length of the string
  */
 
-int print_string(va_list val)
+int print_str(va_list val)
 {
 	char *s;
 	int i, len;

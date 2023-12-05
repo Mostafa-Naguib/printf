@@ -9,7 +9,7 @@
 int _printf(const char * const format, ...)
 {
 	specifier formats[] = {
-		{"%s", print_string},
+		{"%s", print_str},
 		{"%c", print_char},
 		{"%%", print_percent}
 	};
@@ -22,9 +22,10 @@ int _printf(const char * const format, ...)
 		return (-1);
 
 	Here:
-	while (format[i] != '\0')
+	while (format[i])
 	{
-		for (j = 0; j <= 0; j++)
+		j = 2;
+		while (j >= 0)
 		{
 			if (formats[j].s[0] == format[i] && formats[j].s[1] == format[i + 1])
 			{
@@ -32,6 +33,7 @@ int _printf(const char * const format, ...)
 				i = i + 2;
 				goto Here;
 			}
+			j--;
 		}
 		_putchar(format[i]);
 		len++;
@@ -49,7 +51,7 @@ int _printf(const char * const format, ...)
  * On error, -1 is returned, and errno is set appropriately.
  */
 
-int _putchar(char c)
+int _putchar(int c)
 {
 	return (write(1, &c, 1));
 }
