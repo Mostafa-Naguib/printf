@@ -23,19 +23,16 @@ int _printf(const char * const format, ...)
 	if (!format || (format[0] == '%' && !format[1]))
 		return (-1);
 
-	Here:
 	while (format[i])
 	{
-		j = 2;
-		while (j >= 0)
+		for (j = 0; j < 3; j++)
 		{
 			if (formats[j].s[0] == format[i] && formats[j].s[1] == format[i + 1])
 			{
 				len += formats[j].v(args);
 				i = i + 2;
-				goto Here;
+				j = 1000;
 			}
-			j--;
 		}
 		if (format[i])
 		{
