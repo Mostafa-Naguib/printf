@@ -13,6 +13,8 @@ int _printf(const char * const format, ...)
 	specifier formats[] = {
 		{"%s", print_str},
 		{"%c", print_char},
+		{"%d", print_int},
+		{"%i", print_int},
 		{"%%", print_percent}
 	};
 	va_list args;
@@ -25,7 +27,7 @@ int _printf(const char * const format, ...)
 
 	while (format[i])
 	{
-		for (j = 0; j < 3; j++)
+		for (j = 0; j < 5; j++)
 		{
 			if (format[i] == '%' && formats[j].s[1] == format[i + 1])
 			{
