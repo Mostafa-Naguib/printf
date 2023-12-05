@@ -33,7 +33,7 @@ int print_string(va_list args)
 }
 
 /**
- * print_char - printing the the string
+ * print_char - printing the string
  *
  * @args: the char argument
  *
@@ -45,6 +45,25 @@ int print_char(va_list args)
 	char s = va_arg(args, int);
 
 	_putchar(s);
+
+	return (1);
+}
+
+/**
+ * print_percent - printing the percent sign
+ *
+ * @args: the percent argument
+ *
+ * Return: one
+ */
+
+int print_percent(va_list args)
+{
+	int s = va_arg(args, int);
+
+	s = s;
+
+	_putchar(37);
 
 	return (1);
 }

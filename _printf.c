@@ -11,6 +11,7 @@ int _printf(const char * const format, ...)
 	specifier formats[] = {
 		{"%s", print_string},
 		{"%c", print_char},
+		{"%%", print_percent}
 	};
 	va_list args;
 	int i = 0, j, len = 0;
@@ -21,7 +22,7 @@ int _printf(const char * const format, ...)
 
 	while (format[i] != '\0')
 	{
-		j = 1;
+		j = 2;
 		while (j >= 0)
 		{
 			if (formats[j].s[0] == format[i] && formats[j].s[1] == format[i + 1])
