@@ -27,14 +27,14 @@ int _printf(const char * const format, ...)
 	{
 		for (j = 0; j < 3; j++)
 		{
-			if (formats[j].s[0] == format[i] && formats[j].s[1] == format[i + 1])
+			if (formats[j].s[1] == format[i + 1])
 			{
 				len += formats[j].v(args);
-				i = i + 2;
-				j = 1000;
+				i += 2;
+				j = 100;
 			}
 		}
-		if (format[i])
+		if (format[i] && j != 100)
 		{
 			_putchar(format[i++]);
 			len++;
