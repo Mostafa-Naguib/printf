@@ -14,8 +14,9 @@ int print_int(va_list args)
 	int divisor, digit, last = num % 10;
 	int counter = 1;
 
+    num /= 10;
 
-	if (num < 0)
+	if (last < 0)
 	{
 		_putchar('-');
 		num *= -1;
