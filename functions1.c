@@ -1,5 +1,4 @@
 #include "main.h"
-int _strlen(char *s);
 
 /**
  * print_str - printing the the string
@@ -9,12 +8,12 @@ int _strlen(char *s);
  * Return: The length of the string
  */
 
-int print_str(va_list val)
+int print_str(va_list args)
 {
 	char *s;
-	int i, len;
+	int i, len = 0;
 
-	s = va_arg(val, char *);
+	s = va_arg(args, char *);
 	if (!s)
 	{
 		s = "(null)";
@@ -24,9 +23,10 @@ int print_str(va_list val)
 	}
 	else
 	{
-		len = _strlen(s);
-		for (i = 0; i < len; i++)
-			_putchar(s[i]);
+
+		while (*s)
+			_putchar(*s++);
+			len++;
 		return (len);
 	}
 }
@@ -49,8 +49,6 @@ int print_char(va_list args)
 /**
  * print_percent - printing the percent sign
  *
- * @args: the percent argument
- *
  * Return: one
  */
 
@@ -61,19 +59,3 @@ int print_percent(void)
 	return (1);
 }
 
-
-/**
- * _strlen - Get the length of the string
- * @s: The string.
- * Return: the length of the string.
- */
-
-int _strlen(char *s)
-{
-	int c;
-
-	for (c = 0; s[c] != 0; c++)
-		;
-	return (c);
-
-}
