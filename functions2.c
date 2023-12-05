@@ -18,7 +18,7 @@ int print_int(va_list args)
 	{
 		_putchar('-');
 		num = -num;
-        counter++;
+		counter++;
 	}
 
 	divisor = 1;
