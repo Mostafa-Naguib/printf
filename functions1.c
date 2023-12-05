@@ -1,11 +1,11 @@
 #include "main.h"
 
 /**
- * print_str - printing the the string
+ * print_str - printing the the string..
  *
- * @args: the string argument
+ * @args: The string argument.
  *
- * Return: The length of the string
+ * Return: The length of the string.
  */
 
 int print_str(va_list args)
@@ -16,14 +16,13 @@ int print_str(va_list args)
 	s = va_arg(args, char *);
 	if (!s)
 	{
-		s = "(null)";
+		s = NULL_STRING;
 		for (i = 0; i < 6; i++)
 			_putchar(s[i]);
 		return (6);
 	}
 	else
 	{
-
 		while (*s)
 		{
 			_putchar(*s++);
@@ -34,11 +33,11 @@ int print_str(va_list args)
 }
 
 /**
- * print_char - printing the string
+ * print_char - Printing the string.
  *
- * @args: the char argument
+ * @args: The chararcter argument.
  *
- * Return: one
+ * Return: 1
  */
 
 int print_char(va_list args)
@@ -49,9 +48,9 @@ int print_char(va_list args)
 }
 
 /**
- * print_percent - printing the percent sign
+ * print_percent - Printing the percent sign.
  *
- * Return: one
+ * Return: 1
  */
 
 int print_percent(void)

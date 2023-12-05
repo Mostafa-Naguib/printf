@@ -1,9 +1,11 @@
 #include "main.h"
 
 /**
- * _printf - a function that produces output according to a format
+ * _printf - A function that produces output according to a format.
+ *
  * @format: a character string composed of zero or more directives
- * Return: the number of characters printed (excluding the null byte)
+ *
+ * Return: the number of characters printed (excluding the null byte).
  */
 
 int _printf(const char * const format, ...)
@@ -47,8 +49,8 @@ int _printf(const char * const format, ...)
  * _putchar - writes the character c to stdout
  * @c: The character to print
  *
- * Return: On success 1.
- * On error, -1 is returned, and errno is set appropriately.
+ * Return: On success, 1.
+ * On error, -1.
  */
 
 int _putchar(int c)

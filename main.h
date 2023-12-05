@@ -1,7 +1,7 @@
 #ifndef MAIN_H
 #define MAIN_H
 
-/* include a nessery libraries */
+/* include necessary libraries */
 #include <stdlib.h>
 #include <stdarg.h>
 #include <limits.h>
@@ -9,26 +9,25 @@
 #include <unistd.h>
 
 
-/* size of the output buffer */
-#define BUFFER_SIZE 1024
-#define BUFFER_FLUSH -1
 #define NULL_STRING "(null)"
 
 
-/* prototype functions */
+/* prototype for _printf file */
 int _printf(const char *format, ...);
 int _putchar(int c);
 
-
+/* prototype for functoins1 file */
 int print_str(va_list args);
 int print_char(va_list args);
-int print_integer(va_list args);
 int print_percent(void);
 
+
+
 /**
- * struct form - match the conversion specifiers for printf
- * @s: type char pointer of the specifier i.e (l, h) for (d, i, u, o, x, X)
- * @v: type pointer to function for the conversion specifier
+ * struct form - match the conversion specifiers for printf...
+ *
+ * @s: type char pointer of the specifier...
+ * @v: function pointer for the conversion specifier...
  *
  */
 
