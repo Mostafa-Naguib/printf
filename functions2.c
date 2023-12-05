@@ -26,7 +26,7 @@ int print_int(va_list args)
 
     if (num > 0)
     {
-        divisor = 10;
+        divisor = 1;
         while (num / divisor != 0)
             divisor *= 10;
 
