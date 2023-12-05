@@ -11,7 +11,7 @@
 int print_int(va_list args)
 {
 	int n = va_arg(args, int);
-	int num, last = n % 10, digit, devisor = 1;
+	int num, last = n % 10, digit, exp = 1;
 	int  i = 1;
 
 	n = n / 10;
@@ -25,20 +25,23 @@ int print_int(va_list args)
 		last = -last;
 		i++;
 	}
-    while (num / 10 != 0)
-    {
-        devisor = devisor * 10;
-        num = num / 10;
-    }
-    num = n;
-    while (devisor > 0)
-    {
-        digit = num / devisor;
-        _putchar(digit + '0');
-        num = num - (digit * devisor);
-        devisor = devisor / 10;
-        i++;
-    }
+	if (num > 0)
+	{
+		while (num / 10 != 0)
+		{
+			exp = exp * 10;
+			num = num / 10;
+		}
+		num = n;
+		while (exp > 0)
+		{
+			digit = num / exp;
+			_putchar(digit + '0');
+			num = num - (digit * exp);
+			exp = exp / 10;
+			i++;
+		}
+	}
 	_putchar(last + '0');
 
 	return (i);
