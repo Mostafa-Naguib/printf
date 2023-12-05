@@ -25,8 +25,10 @@ int print_str(va_list args)
 	{
 
 		while (*s)
+		{
 			_putchar(*s++);
 			len++;
+		}
 		return (len);
 	}
 }
