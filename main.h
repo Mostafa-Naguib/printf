@@ -25,6 +25,34 @@ int print_percent(void);
 int print_int(va_list args);
 
 
+/* It's your job my partner "don't touch _printf file just create functions3.c file and functions4.c and so on" */
+/* remove this comment after you understand */
+
+/* prototype for functoins3 file */
+int print_binary(va_list args);
+
+
+/* prototype for functoins4 file */
+int print_unsigned(va_list args);
+int print_octadecemal(va_list args);
+int print_hexadecemal(va_list args);
+int print_hexadecemal_uppercase(va_list args);
+
+
+/* prototype for functoins5 file */
+int print_string(va_list args);
+
+
+/* prototype for functoins6 file */
+int print_pointer(va_list args);
+
+
+
+/* prototype for functoins13 file */
+int print_reverse(va_list args);
+
+
+
 /**
  * struct form - match the conversion specifiers for printf...
  *
