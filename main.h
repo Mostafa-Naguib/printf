@@ -25,7 +25,7 @@ int print_percent(void);
 int print_int(va_list args);
 
 
-/* It's your job my partner "don't touch _printf file just create functions3.c file and functions4.c and so on" */
+/* It's your job my partner "don't touch _printf file" */
 /* remove this comment after you understand */
 
 /* prototype for functoins3 file */
