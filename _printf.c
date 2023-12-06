@@ -11,20 +11,13 @@
 int _printf(const char * const format, ...)
 {
 	specifier formats[] = {
-		{"%s", print_str},
-		{"%c", print_char},
-		{"%d", print_int},
-		{"%i", print_int},
-		{"%%", print_percent},
-		{"%b", print_binary},
-		{"%u", print_unsigned},
-		{"%o", print_octadecemal},
-		{"%x", print_hexadecemal},
-		{"%X", print_hexadecemal_uppercase},
-		{"%R", print_special_string},
-		{"%p", print_pointer},
+		{"%s", print_str}, {"%c", print_char},
+		{"%d", print_int}, {"%i", print_int},
+		{"%%", print_percent}, {"%b", print_binary},
+		{"%u", print_unsigned}, {"%o", print_octadecemal},
+		{"%x", print_hexadecemal}, {"%X", print_hexadecemal_uppercase},
+		{"%R", print_special_string}, {"%p", print_pointer},
 		{"%r", print_reverse}
-
 	};
 	va_list args;
 	int i = 0, j = 0, len = 0;
