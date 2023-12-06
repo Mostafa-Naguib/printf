@@ -40,7 +40,7 @@ int print_hexadecemal_uppercase(va_list args);
 
 
 /* prototype for functoins5 file */
-int print_string(va_list args);
+int print_special_string(va_list args);
 
 
 /* prototype for functoins6 file */

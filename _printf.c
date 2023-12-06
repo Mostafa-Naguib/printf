@@ -21,7 +21,7 @@ int _printf(const char * const format, ...)
 		{"%o", print_octadecemal},
 		{"%x", print_hexadecemal},
 		{"%X", print_hexadecemal_uppercase},
-		{"%R", print_string},
+		{"%R", print_special_string},
 		{"%p", print_pointer},
 		{"%r", print_reverse}
 
