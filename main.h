@@ -7,6 +7,7 @@
 #include <limits.h>
 #include <string.h>
 #include <unistd.h>
+#include <stdio.h>
 
 
 #define NULL_STRING "(null)"
@@ -23,6 +24,14 @@ int print_percent(void);
 
 /* prototype for functoins2 file */
 int print_int(va_list args);
+
+
+/* prototype for octHex file */
+int print_unsigned(va_list args);
+int print_octl(va_list args);
+int print_hexs(va_list args);
+int print_hexC(va_list args);
+
 
 
 /**

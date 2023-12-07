@@ -15,8 +15,13 @@ int _printf(const char * const format, ...)
 		{"%c", print_char},
 		{"%d", print_int},
 		{"%i", print_int},
-		{"%%", print_percent}
+		{"%%", print_percent},
+		{"%u", print_unsigned},
+		{"%o", print_octl},
+		{"%x", print_hexs},
+		{"%X", print_hexC},		
 	};
+
 	va_list args;
 	int i = 0, j = 0, len = 0;
 
@@ -27,7 +32,7 @@ int _printf(const char * const format, ...)
 
 	while (format[i])
 	{
-		for (j = 0; j < 5; j++)
+		for (j = 0; j < 9; j++)
 		{
 			if (format[i] == '%' && formats[j].s[1] == format[i + 1])
 			{
