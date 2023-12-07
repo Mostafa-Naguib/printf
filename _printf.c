@@ -20,6 +20,10 @@ int _printf(const char * const format, ...)
 		{"%o", print_octl},
 		{"%x", print_hexs},
 		{"%X", print_hexC},		
+		{"%b", print_binary},
+		{"%R", print_special_string},
+		{"%p", print_pointer},
+		{"%r", print_reverse}
 	};
 
 	va_list args;
@@ -32,7 +36,7 @@ int _printf(const char * const format, ...)
 
 	while (format[i])
 	{
-		for (j = 0; j < 9; j++)
+		for (j = 0; j < 13; j++)
 		{
 			if (format[i] == '%' && formats[j].s[1] == format[i + 1])
 			{

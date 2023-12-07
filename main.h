@@ -33,6 +33,22 @@ int print_hexs(va_list args);
 int print_hexC(va_list args);
 
 
+/* prototype for functoins3 file */
+int print_binary(va_list args);
+
+
+/* prototype for functoins5 file */
+int print_special_string(va_list args);
+
+
+/* prototype for functoins6 file */
+int print_pointer(va_list args);
+
+
+
+/* prototype for functoins13 file */
+int print_reverse(va_list args);
+
 
 /**
  * struct form - match the conversion specifiers for printf...
@@ -50,4 +66,3 @@ typedef struct form
 
 
 #endif
-
