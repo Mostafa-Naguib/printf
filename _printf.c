@@ -11,18 +11,10 @@
 int _printf(const char * const format, ...)
 {
 	specifier formats[] = {
-		{"%s", print_str},
-		{"%c", print_char},
-		{"%d", print_int},
-		{"%i", print_int},
-		{"%%", print_percent},
-		{"%u", print_unsigned},
-		{"%o", print_octl},
-		{"%x", print_hexs},
-		{"%X", print_hexC},		
-		{"%b", print_binary},
-		{"%R", print_special_string},
-		{"%p", print_pointer},
+		{"%s", print_str}, {"%c", print_char}, {"%d", print_int},
+		{"%i", print_int}, {"%%", print_percent}, {"%u", print_unsigned},
+		{"%o", print_octl}, {"%x", print_hexs}, {"%X", print_hexC},
+		{"%b", print_binary}, {"%R", print_special_string}, {"%p", print_pointer},
 		{"%r", print_reverse}
 	};
 

@@ -48,13 +48,20 @@ int print_octl(va_list args)
 		num /= 8;
 	}
 
-	while (i-- > 0)
+	while (i > 0)
 	{
+		i--;
 		_putchar(oct[i]);
 	}
 
 	return (i);
 }
+
+/**
+ * print_hexs - print hexadicemal in lowercase charecter.
+ * @args: is a numbers for convert.
+ * Return: zero always.
+ */
 
 int print_hexs(va_list args)
 {
@@ -73,12 +80,21 @@ int print_hexs(va_list args)
 		num /= 16;
 	}
 
-	while (i-- > 0)
+	while (i > 0)
+	{
+		i--;
 	       _putchar(hex[i]);
+	}
 
 	return (0);
 }
 
+
+/**
+ * print_hexC - print hexadicemal in uppercase charecter.
+ * @args: is a numbers for convert.
+ * Return: zero always.
+ */
 
 int print_hexC(va_list args)
 {
@@ -98,7 +114,9 @@ int print_hexC(va_list args)
 	}
 
 	while (i-- > 0)
+	{
 		_putchar(hex[i]);
+	}
 
 	return (0);
 }
