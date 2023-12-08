@@ -8,22 +8,38 @@
 
 int print_binary(va_list args)
 {
-	unsigned int num = va_arg(args, unsigned int);
-	int i, rem;
-	char bin[100] = {0};
+	long int num = va_arg(args, long int);
+	int i, rem, sign, lens;
+	char bin[1024] = {0};
 
-	i = rem = 0;
-	while (num > 0)
+	i = rem = sign = lens = 0;
+
+	if (num == 0)
 	{
-		rem = num % 2;
-		bin[i++] = rem + '0';
-		num /= 2;
+		_putchar('0');
+		_putchar('0');
+		return (3);
 	}
-	while (i >= 0)
+	else
 	{
-		_putchar(bin[i--]);
+		if (num < 0)
+		{
+			num *= -1;
+			sign = 1;
+		}
+		while (num > 0)
+		{
+			rem = num % 2;
+			bin[i++] = rem + '0';
+			num /= 2;
+			lens = i;
+		}
+		while (i >= 0)
+		{
+			_putchar(bin[--i]);
+		}
 	}
-	return (0);
+	return (lens);
 }
 
 
