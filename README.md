@@ -1,6 +1,6 @@
 This is a group repository
 
-Group mempers:
+Group members:
 1- Mostafa Naguib
 2- Mohammed Farid (El Hlawany)
 
