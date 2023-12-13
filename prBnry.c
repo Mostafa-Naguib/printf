@@ -18,7 +18,7 @@ int print_binary(va_list args)
 	{
 		_putchar('0');
 		_putchar('0');
-		return (3);
+		return (2);
 	}
 	else
 	{
@@ -39,7 +39,7 @@ int print_binary(va_list args)
 			_putchar(bin[--i]);
 		}
 	}
-	return (lens);
+	return (lens -1);
 }
 
 

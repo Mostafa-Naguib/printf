@@ -27,7 +27,7 @@ int print_unsigned(va_list args)
 		div10 /= 10;
 		i++;
 	}
-	return (i);
+	return (i - 1);
 }
 
 /**
@@ -57,7 +57,7 @@ int print_octl(va_list args)
 		_putchar(oct[i]);
 	}
 
-	return (lens);
+	return (lens - 1);
 }
 
 /**
@@ -92,7 +92,7 @@ int print_hexs(va_list args)
 	       _putchar(hex[i]);
 	}
 
-	return (lens);
+	return (lens - 1);
 }
 
 
@@ -127,5 +127,5 @@ int print_hexC(va_list args)
 		_putchar(hex[i]);
 	}
 
-	return (lens);
+	return (lens - 1);
 }
