@@ -22,12 +22,15 @@ int print_unsigned(va_list args)
 	while (div10 >= 1)
 	{
 		digt = num / div10;
-		_putchar(digt + '0');
+		if (digt != '\0')
+		{
+			_putchar(digt + '0');
+		}
 		num %= div10;
 		div10 /= 10;
 		i++;
 	}
-	return (i - 1);
+	return (i);
 }
 
 /**
@@ -53,11 +56,12 @@ int print_octl(va_list args)
 
 	while (i > 0)
 	{
-		i--;
-		_putchar(oct[i]);
+		if (oct[i] != '\0')
+			_putchar(oct[i]);
+		--i;
 	}
 
-	return (lens - 1);
+	return (lens);
 }
 
 /**
@@ -88,11 +92,12 @@ int print_hexs(va_list args)
 
 	while (i > 0)
 	{
-		i--;
-	       _putchar(hex[i]);
+		if (hex[i] != '\0')
+			_putchar(hex[i]);
+		--i;
 	}
 
-	return (lens - 1);
+	return (lens);
 }
 
 
@@ -122,10 +127,12 @@ int print_hexC(va_list args)
 		lens = i;
 	}
 
-	while (i-- > 0)
+	while (i > 0)
 	{
-		_putchar(hex[i]);
+		if (hex[i] != '\0')
+			_putchar(hex[i]);
+		--i;
 	}
 
-	return (lens - 1);
+	return (lens);
 }

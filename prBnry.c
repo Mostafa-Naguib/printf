@@ -9,10 +9,8 @@
 int print_binary(va_list args)
 {
 	long int num = va_arg(args, long int);
-	int i, rem, sign, lens;
+	int i = 0, rem = 0, lens = 0;
 	char bin[1024] = {0};
-
-	i = rem = sign = lens = 0;
 
 	if (num == 0)
 	{
@@ -25,21 +23,24 @@ int print_binary(va_list args)
 		if (num < 0)
 		{
 			num *= -1;
-			sign = 1;
 		}
 		while (num > 0)
 		{
 			rem = num % 2;
-			bin[i++] = rem + '0';
+			bin[i] = rem + '0';
 			num /= 2;
-			lens = i;
+			i++;
 		}
+		bin[i++] = '\0';
+		lens = i;
 		while (i >= 0)
 		{
-			_putchar(bin[--i]);
+			if (bin[i] != '\0')
+				_putchar(bin[i]);
+			i--;
 		}
 	}
-	return (lens -1);
+	return (lens);
 }
 
 
