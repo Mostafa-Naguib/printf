@@ -32,7 +32,7 @@ int print_binary(va_list args)
 			i++;
 		}
 		bin[i++] = '\0';
-		lens = i;
+		lens = i - 1;
 		while (i >= 0)
 		{
 			if (bin[i] != '\0')
