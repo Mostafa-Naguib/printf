@@ -8,22 +8,20 @@
 
 int print_binary(va_list args)
 {
-	long int num = va_arg(args, long int);
+	unsigned int num = va_arg(args, unsigned int);
 	int i = 0, rem = 0, lens = 0;
 	char bin[1024] = {0};
 
 	if (num == 0)
 	{
 		_putchar('0');
-		_putchar('0');
-		return (2);
+		return (1);
 	}
 	else
 	{
-		if (num < 0)
-		{
-			num *= -1;
-		}
+		if (num >= UINT_MAX)
+			num -= (UINT_MAX + 1);
+
 		while (num > 0)
 		{
 			rem = num % 2;
