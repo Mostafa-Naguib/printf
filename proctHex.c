@@ -13,8 +13,12 @@ int print_unsigned(va_list args)
 	unsigned int num = va_arg(args, unsigned int);
 	int i = 0;
 
-	if (!(num > 0 && num <= UINT_MAX))
-		return (-1);
+	if (num == 0)
+	{
+		_putchar('0');
+		_putchar('0');
+		return (2);
+	}
 
 	while (num / div10 >= 10)
 		div10 *= 10;
@@ -45,6 +49,12 @@ int print_octl(va_list args)
 
 	lens = i = 0;
 
+	if (num == 0)
+	{
+		_putchar('0');
+		_putchar('0');
+		return (2);
+	}
 	while (num != 0)
 	{
 		oct[i] = num % 8 + '0';
@@ -78,6 +88,12 @@ int print_hexs(va_list args)
 	unsigned int rem = 0;
 
 	i = lens = 0;
+	if (num == 0)
+	{
+		_putchar('0');
+		_putchar('0');
+		return (2);
+	}
 
 	while (num > 0)
 	{
@@ -88,7 +104,7 @@ int print_hexs(va_list args)
 			hex[i] = (rem - 10 + 'a');
 		num /= 16;
 		i++;
-		lens++;;
+		lens++;
 	}
 
 	hex[i++] = '\0';
@@ -101,7 +117,6 @@ int print_hexs(va_list args)
 
 	return (lens);
 }
-
 
 /**
  * print_hexC - print hexadicemal in uppercase charecter.
@@ -118,6 +133,12 @@ int print_hexC(va_list args)
 
 	lens = i = 0;
 
+	if (num == 0)
+	{
+		_putchar('0');
+		_putchar('0');
+		return (2);
+	}
 	while (num > 0)
 	{
 		rem = num % 16;
@@ -131,7 +152,7 @@ int print_hexC(va_list args)
 	}
 
 	hex[i++] = '\0';
-	while (i > 0)
+	while (i >= 0)
 	{
 		if (hex[i] != '\0')
 			_putchar(hex[i]);
