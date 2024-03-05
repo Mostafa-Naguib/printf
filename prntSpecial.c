@@ -34,7 +34,7 @@ int print_no_special(va_list args)
         str++;
         i++;
     }
-    return (i);
+    return (i - 1);
 }
 
 
