@@ -16,8 +16,7 @@ int print_unsigned(va_list args)
 	if (num == 0)
 	{
 		_putchar('0');
-		_putchar('0');
-		return (2);
+		return (1);
 	}
 
 	while (num / div10 >= 10)
@@ -44,16 +43,13 @@ int print_unsigned(va_list args)
 int print_octl(va_list args)
 {
 	unsigned int num = va_arg(args, unsigned int);
-	int i, lens;
+	int i = 0, lens = 0;
 	char oct[1024] = {0};
-
-	lens = i = 0;
 
 	if (num == 0)
 	{
 		_putchar('0');
-		_putchar('0');
-		return (2);
+		return (1);
 	}
 	while (num != 0)
 	{
@@ -63,12 +59,10 @@ int print_octl(va_list args)
 		lens++;
 	}
 
-	oct[i++] = '\0';
 	while (i >= 0)
 	{
-		if (oct[i] != '\0')
-			_putchar(oct[i]);
-		--i;
+		_putchar(oct[i]);
+		i--;
 	}
 
 	return (lens);
@@ -83,17 +77,18 @@ int print_octl(va_list args)
 int print_hexs(va_list args)
 {
 	unsigned int num = va_arg(args, unsigned int);
-	int i, lens;
+	int i = 0, lens = 0;
 	char hex[1024] = {0};
 	unsigned int rem = 0;
 
-	i = lens = 0;
 	if (num == 0)
 	{
 		_putchar('0');
-		_putchar('0');
-		return (2);
+		return (1);
 	}
+
+	if (num >= UINT_MAX)
+		num -= (UINT_MAX + 1);
 
 	while (num > 0)
 	{
@@ -107,12 +102,10 @@ int print_hexs(va_list args)
 		lens++;
 	}
 
-	hex[i++] = '\0';
 	while (i >= 0)
 	{
-		if (hex[i] != '\0')
-			_putchar(hex[i]);
-		--i;
+		_putchar(hex[i]);
+		i--;
 	}
 
 	return (lens);
@@ -126,19 +119,19 @@ int print_hexs(va_list args)
 
 int print_hexC(va_list args)
 {
-	unsigned long num = va_arg(args, unsigned long);
-	unsigned long rem = 0;
-	int i, lens;
+	unsigned int num = va_arg(args, unsigned int);
+	unsigned int rem = 0;
+	int i = 0, lens = 0;
 	char hex[1024];
-
-	lens = i = 0;
 
 	if (num == 0)
 	{
 		_putchar('0');
-		_putchar('0');
-		return (2);
+		return (1);
 	}
+	if (num >= UINT_MAX)
+		num -= UINT_MAX + 1;
+
 	while (num > 0)
 	{
 		rem = num % 16;
@@ -151,11 +144,9 @@ int print_hexC(va_list args)
 		lens++;
 	}
 
-	hex[i++] = '\0';
 	while (i >= 0)
 	{
-		if (hex[i] != '\0')
-			_putchar(hex[i]);
+		_putchar(hex[i]);
 		--i;
 	}
 
