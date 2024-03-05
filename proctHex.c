@@ -65,7 +65,7 @@ int print_octl(va_list args)
 		i--;
 	}
 
-	return (lens);
+	return (lens  - 1);
 }
 
 /**
@@ -108,7 +108,7 @@ int print_hexs(va_list args)
 		i--;
 	}
 
-	return (lens);
+	return (lens  - 1);
 }
 
 /**
@@ -150,5 +150,5 @@ int print_hexC(va_list args)
 		--i;
 	}
 
-	return (lens);
+	return (lens - 1);
 }
