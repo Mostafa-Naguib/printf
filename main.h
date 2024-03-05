@@ -36,6 +36,8 @@ int print_hexC(va_list args);
 /* prototype for functoins3 file */
 int print_binary(va_list args);
 
+/* don't print the special charecters */
+int print_no_special(va_list args);
 
 /* prototype for functoins5 file */
 int print_special_string(va_list args);

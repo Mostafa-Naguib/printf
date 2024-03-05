@@ -59,4 +59,3 @@ int print_percent(void)
 
 	return (1);
 }
-
