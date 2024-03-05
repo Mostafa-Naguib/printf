@@ -124,7 +124,7 @@ int print_hexC(va_list args)
 	unsigned int num = va_arg(args, unsigned int);
 	unsigned int rem = 0;
 	int i = 0, lens = 0;
-	char hex[1024];
+	char hex[1024] = {0};
 
 	if (num == 0)
 	{
