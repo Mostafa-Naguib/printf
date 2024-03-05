@@ -61,11 +61,12 @@ int print_octl(va_list args)
 
 	while (i >= 0)
 	{
-		_putchar(oct[i]);
+		if (oct[i] != '\0')
+			_putchar(oct[i]);
 		i--;
 	}
 
-	return (lens  - 1);
+	return (lens);
 }
 
 /**
@@ -104,11 +105,12 @@ int print_hexs(va_list args)
 
 	while (i >= 0)
 	{
-		_putchar(hex[i]);
+		if (hex[i] != '\0')
+			_putchar(hex[i]);
 		i--;
 	}
 
-	return (lens  - 1);
+	return (lens);
 }
 
 /**
@@ -146,9 +148,10 @@ int print_hexC(va_list args)
 
 	while (i >= 0)
 	{
-		_putchar(hex[i]);
+		if (hex[i] != '\0')
+			_putchar(hex[i]);
 		--i;
 	}
 
-	return (lens - 1);
+	return (lens);
 }
