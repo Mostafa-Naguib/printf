@@ -66,6 +66,21 @@ int print_pointer(va_list args)
 
 int print_reverse(va_list args)
 {
-	args = args;
-	return (0);
+	char *str = va_arg(args, char *);
+	int i = 0, lens = 0;
+
+	if (str == NULL)
+		return (0);
+
+	while (*str++ != '\0')
+		i++;
+
+	str -= i + 1;
+	lens = i;
+	while (i >= 0)
+	{
+		_putchar(str[i]);
+		i--;
+	}
+	return (lens);
 }
