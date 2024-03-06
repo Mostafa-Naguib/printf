@@ -46,16 +46,19 @@ int print_special_string(va_list args)
 	if (str == NULL)
 		return (0);
 
-	while (*str++ != '\0')
+	while (*str != '\0')
 	{
-		if (*str < 'n')
+		if (*str >= 'a' && *str < 'n')
 			_putchar(*str + 13);
-		else if (*str >= 'n')
+		else if (*str >= 'n' && *str <= 'z')
 			_putchar(*str - 13);
-		else if (*str < 'N')
+		else if (*str >= 'A' && *str < 'N')
 			_putchar(*str + 13);
-		else if (*str >= 'N')
+		else if (*str >= 'N' && *str <= 'Z')
 			_putchar(*str - 13);
+		else
+			_putchar(*str);
+		str++;
 		i++;
 	}
 	return (i);
