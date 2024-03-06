@@ -76,7 +76,7 @@ int print_reverse(va_list args)
 		i++;
 
 	str -= i + 1;
-	lens = i - 1;
+	lens = i;
 	while (i >= 0)
 	{
 		_putchar(str[i]);
