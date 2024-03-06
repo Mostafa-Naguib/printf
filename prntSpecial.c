@@ -79,7 +79,8 @@ int print_reverse(va_list args)
 	lens = i;
 	while (i >= 0)
 	{
-		_putchar(str[i]);
+		if (str[i] != '\0')
+			_putchar(str[i]);
 		i--;
 	}
 	return (lens);
