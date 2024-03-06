@@ -40,8 +40,25 @@ int print_no_special(va_list args)
 
 int print_special_string(va_list args)
 {
-	args = args;
-	return (0);
+	char *str = va_arg(args, char *);
+	int i = 0;
+
+	if (str == NULL)
+		return (0);
+
+	while (*str++ != '\0')
+	{
+		if (*str < 'n')
+			_putchar(*str + 13);
+		else if (*str >= 'n')
+			_putchar(*str - 13);
+		else if (*str < 'N')
+			_putchar(*str + 13);
+		else if (*str >= 'N')
+			_putchar(*str - 13);
+		i++;
+	}
+	return (i);
 }
 
 
