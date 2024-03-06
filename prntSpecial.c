@@ -17,22 +17,21 @@ int print_no_special(va_list args)
     {
         if ((*str > 0 && *str < 32) || *str >= 127)
         {
-            _putchar(92);
-            _putchar('x');
+            i += _putchar(92);
+            i += _putchar('x');
             if (*str < 16)
-                _putchar('0');
+                i += _putchar('0');
 
             if (*str % 16 < 10)
-                _putchar(*str + '0');
+                i += _putchar(*str + '0');
             else
-                _putchar(*str % 16 - 10 + 'A');
+                i += _putchar(*str % 16 - 10 + 'A');
         }
         else
         {
-            _putchar(*str);
+            i += _putchar(*str);
         }
         str++;
-        i++;
     }
     return (i);
 }
