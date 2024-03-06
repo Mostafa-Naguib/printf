@@ -7,33 +7,28 @@
 */
 int print_no_special(va_list args)
 {
-    char *str;
-    int i = 0;
+	char *str;
+	int i = 0;
 
-    str = va_arg(args, char *);
-    if (str == NULL)
-        return (0);
-    while (*str != '\0')
-    {
-        if ((*str > 0 && *str < 32) || *str >= 127)
-        {
-            i += _putchar(92);
-            i += _putchar('x');
-            if (*str < 16)
-                i += _putchar('0');
-
-            if (*str % 16 < 10)
-                i += _putchar(*str + '0');
-            else
-                i += _putchar(*str % 16 - 10 + 'A');
-        }
-        else
-        {
-            i += _putchar(*str);
-        }
-        str++;
-    }
-    return (i);
+	str = va_arg(args, char *);
+	if (str == NULL)
+		return (0);
+	while (*str != '\0')
+	{
+		if ((*str > 0 && *str < 32) || *str >= 127)
+		{
+			i += _putchar(92);
+			i += _putchar('x');
+			i += _putchar(*str / 16 < 10 ? *str / 16 + '0' : *str / 16 - 10 + 'A');
+			i += _putchar(*str % 16 < 10 ? *str % 16 + '0' : *str % 16 - 10 + 'A');
+		}
+		else
+		{
+			i += _putchar(*str);
+		}
+		str++;
+	}
+	return (i);
 }
 
 
